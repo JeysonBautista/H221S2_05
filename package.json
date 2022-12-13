@@ -2,9 +2,9 @@
   "name": "landing-page",
   "version": "1.0.0",
   "description": "",
-  "main": "connect.js",
+  "main": "login.js",
   "scripts": {
-    "start": "node connect.js"
+    "start": "node login.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
     "bootstrap": "^5.2.3",
     "cors": "^2.8.5",
     "express": "^4.18.2",
+    "express-session": "^1.17.3",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.20"
   }
