@@ -4,7 +4,7 @@
   "description": "",
   "main": "login.js",
   "scripts": {
-    "start": "node login.js"
+    "start": "node connect.js"
   },
   "repository": {
     "type": "git",
