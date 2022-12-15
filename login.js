@@ -23,10 +23,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'static')));
 
 // http://localhost:3000/
-app.get('/', function(request, response) {
+// app.get('/', function(request, response) {
 	// Render login template
-	response.sendFile(path.join(__dirname + '/login.html'));
-});
+	// response.sendFile(path.join(__dirname + '/login.html'));
+// });
 
 // http://localhost:3000/auth
 app.post('/auth', function(request, response) {
@@ -45,7 +45,7 @@ app.post('/auth', function(request, response) {
 				request.session.loggedin = true;
 				request.session.username = username;
 				// Redirect to home page
-				response.redirect('/index.html');
+				response.redirect('/home');
 			} else {
 				response.send('Usuario y/o Contraseña Incorrecta');
 			}			
@@ -70,3 +70,4 @@ app.get('/home', function(request, response) {
 	response.end();
 });
 
+app.listen(3000);
