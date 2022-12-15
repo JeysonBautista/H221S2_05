@@ -7,7 +7,7 @@ const connection = mysql.createConnection({
 	host: "34.196.73.242",
     user: "user02",
     password: "admin123",
-    database: "db_landing_page"
+    database: "login_socket"
 });
 
 
@@ -36,7 +36,7 @@ app.post('/auth', function(request, response) {
 	// Ensure the input fields exists and are not empty
 	if (username && password) {
 		// Execute SQL query that'll select the account from the database based on the specified username and password
-		connection.query('SELECT * FROM USUARIO WHERE  USERUSU = ? AND PASSUSE = ?', [username, password], function(error, results, fields) {
+		connection.query('SELECT * FROM accounts WHERE  USERUSU = ? AND PASSUSE = ?', [username, password], function(error, results, fields) {
 			// If there is an issue with the query, output the error
 			if (error) throw error;
 			// If the account exists
@@ -70,3 +70,4 @@ app.get('/home', function(request, response) {
 	response.end();
 });
 
+app.listen(3000);
