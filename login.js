@@ -23,10 +23,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'static')));
 
 // http://localhost:3000/
-// app.get('/', function(request, response) {
+app.get('/', function(request, response) {
 	// Render login template
-	// response.sendFile(path.join(__dirname + '/login.html'));
-// });
+	response.sendFile(path.join(__dirname + '/login.html'));
+});
 
 // http://localhost:3000/auth
 app.post('/auth', function(request, response) {
@@ -36,7 +36,7 @@ app.post('/auth', function(request, response) {
 	// Ensure the input fields exists and are not empty
 	if (username && password) {
 		// Execute SQL query that'll select the account from the database based on the specified username and password
-		connection.query('SELECT * FROM accounts WHERE  USERUSU = ? AND PASSUSE = ?', [username, password], function(error, results, fields) {
+		connection.query('SELECT * FROM accounts WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
 			// If there is an issue with the query, output the error
 			if (error) throw error;
 			// If the account exists
@@ -70,3 +70,4 @@ app.get('/home', function(request, response) {
 	response.end();
 });
 
+app.listen(3000);
