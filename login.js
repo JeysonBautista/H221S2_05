@@ -12,7 +12,7 @@ var conexion = mysql.createConnection({
 	host: "34.196.73.242",
 	user: "user02",
 	password: "admin123",
-	database: "landingPrueba"
+	database: "login_socket"
 });
 
 conexion.connect(function (error) {
